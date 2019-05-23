@@ -1,5 +1,5 @@
 import { todoControllerFactory } from "./structure/todo_controller_factory";
-import { TodoController } from "./structure/controller/todo_controller";
+import { TodoController } from "./structure/todo_controller";
 
 import {
   IStoreRepositoryConstructor,

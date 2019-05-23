@@ -3,7 +3,7 @@ import { Dispatch, AnyAction } from "redux";
 import { ITodoState } from "./reducer";
 
 import { reactTodoControllerFactory as todoControllerFactory } from "./todo_controller_factory";
-import { TodoController } from "./structure/controller/todo_controller";
+import { TodoController } from "./structure/todo_controller";
 import { ITodo } from "./structure/entities/todo_interface";
 
 interface IProps extends ITodoState {

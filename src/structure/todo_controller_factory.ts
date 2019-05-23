@@ -1,4 +1,4 @@
-import { TodoController } from "./controller/todo_controller";
+import { TodoController } from "./todo_controller";
 import { StoreInteractor } from "./store_interactor";
 import { IStoreRepository } from "./store/store_repository";
 

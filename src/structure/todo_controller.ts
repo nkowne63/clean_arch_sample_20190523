@@ -1,5 +1,5 @@
-import { ITodoUsecase } from "../usecases/todos_interface";
-import { ITodo } from "../entities/todo_interface";
+import { ITodoUsecase } from "./usecases/todos_interface";
+import { ITodo } from "./entities/todo_interface";
 
 export class TodoController {
   constructor(private todoUseCase: ITodoUsecase) {}
