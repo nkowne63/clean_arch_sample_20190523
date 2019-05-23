@@ -1,5 +1,5 @@
 import { TodoController } from "./controller/todo_controller";
-import { StoreInteractor } from "./store/store_interactor";
+import { StoreInteractor } from "./store_interactor";
 import { IStoreRepository } from "./store/store_repository";
 
 export const todoControllerFactory = (
