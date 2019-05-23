@@ -1,5 +1,5 @@
-import { ITodo, ITodos } from "../structure/entities/todo_interface";
-import { IStoreRepository } from "../structure/store/store_repository";
+import { ITodo, ITodos } from "./structure/entities/todo_interface";
+import { IStoreRepository } from "./structure/store/store_repository";
 // 以下react依存
 import { Dispatch } from "react";
 import { AnyAction } from "redux";

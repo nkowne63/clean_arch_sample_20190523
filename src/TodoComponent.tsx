@@ -1,9 +1,10 @@
 import React from "react";
 import { Dispatch, AnyAction } from "redux";
-import { ITodo } from "./structure/entities/todo_interface.ts";
-import { TodoController } from "./structure/controller/todo_controller.ts";
-import { reactTodoControllerFactory as todoControllerFactory } from "./todo_controller_factory";
 import { ITodoState } from "./reducer";
+
+import { reactTodoControllerFactory as todoControllerFactory } from "./todo_controller_factory";
+import { TodoController } from "./structure/controller/todo_controller";
+import { ITodo } from "./structure/entities/todo_interface";
 
 interface IProps extends ITodoState {
   dispatch: Dispatch<AnyAction>;
