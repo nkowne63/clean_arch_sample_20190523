@@ -1,10 +1,12 @@
 import React from "react";
-import { Dispatch } from "redux";
-import { addTodo } from "./action";
+import { Dispatch, AnyAction } from "redux";
+import { ITodo } from "./structure/entities/todo_interface.ts";
+import { TodoController } from "./structure/controller/todo_controller.ts";
+import { reactTodoControllerFactory as todoControllerFactory } from "./todo_controller_factory";
 import { ITodoState } from "./reducer";
 
 interface IProps extends ITodoState {
-  dispatch: Dispatch<any>;
+  dispatch: Dispatch<AnyAction>;
 }
 
 interface IState {
@@ -12,19 +14,26 @@ interface IState {
 }
 
 export default class extends React.Component<IProps, IState> {
+  private controller: TodoController;
   constructor(props: IProps) {
     super(props);
 
     this.state = {
       text: ""
     };
+
+    this.controller = todoControllerFactory({
+      dispatch: this.props.dispatch
+    });
   }
 
   public addTodo = () => {
-    this.props.dispatch(addTodo(this.state.text));
+    this.controller.addTodo(this.state.text);
   };
   public renderTodoList = () =>
-    this.props.tasks.map(task => <li key={task.id.toString()}>{task.text}</li>);
+    this.controller.getTodos(this.props).map((todo: ITodo, idx: number) => {
+      return <li key={idx}>{todo.text}</li>;
+    });
 
   public render() {
     return (

@@ -1,7 +1,7 @@
 import { reducerWithInitialState } from "typescript-fsa-reducers";
 import * as actions from "./action";
 
-interface ITask {
+export interface ITask {
   id: number;
   text: string;
   done: boolean;
