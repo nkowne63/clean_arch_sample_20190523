@@ -29,12 +29,18 @@ export default class extends React.Component<IProps, IState> {
   }
 
   public addTodo = () => {
+    console.log("component:addTodo before");
     this.controller.addTodo(this.state.text);
+    console.log("component:addTodo after");
   };
-  public renderTodoList = () =>
-    this.controller.getTodos(this.props).map((todo: ITodo, idx: number) => {
-      return <li key={idx}>{todo.text}</li>;
-    });
+  public renderTodoList = () => {
+    console.log("component:renderTodoList");
+    return this.controller
+      .getTodos(this.props)
+      .map((todo: ITodo, idx: number) => {
+        return <li key={idx}>{todo.text}</li>;
+      });
+  };
 
   public render() {
     return (

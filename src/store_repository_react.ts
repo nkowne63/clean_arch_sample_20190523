@@ -13,11 +13,12 @@ export interface IStoreRepositoryConstructor {
 export class StoreRepository implements IStoreRepository {
   constructor(private dispatch: Dispatch<AnyAction>) {}
   addTodo(text: string): void {
-    console.log("repository:addTodo", text);
+    console.log("repository:addTodo before", text);
     this.dispatch(addTodo(text));
     console.log("controller:addTodo after", text);
   }
   getTodos(state: ITodoState): ITodos {
+    console.log("controller:getTodos");
     return {
       todos: state.tasks.map(
         (task: ITask): ITodo => {
